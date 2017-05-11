@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+     xmlns="http://www.springframework.org/schema/beans"  
+     xsi:schemaLocation="http://www.springframework.org/schema/beans 
+     http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">   
+  <bean name="businessService" class="com.wei.s2s.service.impl.BusinessServiceImpl">
+  	<property name="dao" ref="someDao"></property>
+  </bean>
+  <bean name="someDao" class="com.wei.s2s.dao.impl.SomeDaoImpl"></bean>
+	<!-- 方式二：动作类也交给Spring管理 -->
+  <bean name="demo1Action" class="com.wei.s2s.action.Demo1Action">
+  	<property name="businessService" ref="businessService"></property>
+  </bean>
+</beans> 
+		
